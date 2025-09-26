@@ -3,10 +3,12 @@ import { FaFacebook } from "react-icons/fa";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
+import Delivery from './Delivery';
 export default function Footer() {
     return (
-        <>
-            <div className='w-full pt-[60px] pb-10 bg-red-950'>
+        <>  <div className=''>
+            <Delivery />
+            <div className='w-full pt-[20px] pb-10 bg-red-950'>
                 <div className='m-auto w-[90%] '>
                     <div className='w-full gap-10 grid md:grid-cols-4 grid-cols-2'>
                         <ul>
@@ -77,6 +79,8 @@ export default function Footer() {
 
                 </div>
             </div>
+        </div>
+
         </>
     )
 }
