@@ -5,7 +5,7 @@ import AppRouters from "../Route/AppRouters";
 export default function MainLayout(){
   return(
     <> 
-      <div className="w-full h-[100vh] bg-green-700">
+      <div className="w-full bg-orange-200/60">
         <Nav/>
           <AppRouters/>
         <Footer/>
