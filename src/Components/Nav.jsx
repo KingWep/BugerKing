@@ -63,7 +63,7 @@ export default function Nav() {
                             <input type="text" placeholder='Search'
                                 className="px-3 py-2 rounded-[16px] bg-white/20 text-black 
                                 placeholder-black/70 border-[1px] border-gray-800 
-                                focus:outline-none focus:ring-2 focus:ring-orange-400
+                                focus:outline-none focus:ring-2 focus:border-none focus:ring-orange-400
                                 text-sm sm:text-base" />
                             <a href="" className='absolute top-[27%] right-2 text-[20px]'>
                                 <RiSearchEyeLine />
@@ -129,7 +129,7 @@ export default function Nav() {
                             <input
                                 type="text"
                                 placeholder="Search"
-                                className="pl-3 pr-3 py-2 rounded-[16px] bg-white/20 text-black placeholder-black/70 border-[1px] border-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm sm:text-base"
+                                className="pl-3 pr-3 py-2 rounded-[16px] focus:border-none bg-white/20 text-black placeholder-black/70 border-[1px] border-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm sm:text-base"
                             />
                             <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black/70 text-[20px]" />
                         </div>

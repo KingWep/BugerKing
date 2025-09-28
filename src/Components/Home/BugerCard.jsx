@@ -21,7 +21,7 @@ export default function BugerCard({ name, price, img }) {
 
                 {/* Content */}
                 <div className="relative z-10 flex flex-col items-center justify-center py-6 px-4 ">
-                    <h2 className="text-xl font-bold text-red-950 transition-colors duration-500 group-hover:text-white">
+                    <h2 className="text-xl font-bold text-red-950 transition-colors duration-300 lg:duration-500 group-hover:text-white">
                         {name}
                     </h2>
                     <p className="text-red-600 font-serif text-[20px] mt-1 transition-colors duration-500 group-hover:text-gray-200">
