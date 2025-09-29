@@ -11,6 +11,7 @@ const burgers = [
     { id: 7, name: "King Chicken", price: "5.50$", img: "/img/home/b7.png" },
     { id: 8, name: "Snack King", price: "4.75$", img: "/img/home/b8.png" },
     { id: 9, name: "Beverages", price: "4.25$", img: "/img/home/b9.png" },
+    { id: 9, name: "Soda", price: "2.25$", img: "/img/home/b10.png" },
 ];
 
 export default function BurgerMenu() {
