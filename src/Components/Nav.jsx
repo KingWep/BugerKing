@@ -124,6 +124,15 @@ export default function Nav() {
                     <li><Link to={'/restaurant'}>Restaurant</Link></li>
                     <li><Link to={'/menu'}>Menu</Link></li>
                     <li><Link to={'/offer'}>Offer</Link></li>
+                    <li className="flex items-center gap-1">
+                                <Link to={'/reward'} className="font-bold text-[18px]">BK</Link>
+                                <Link to={'/reward'} className="font-bold text-[18px]">
+                                    <sup className="w-[14px] h-[14px] flex items-center justify-center rounded-full border-[2px] border-black/75 text-[10px] font-bold">
+                                        R
+                                    </sup>
+                                </Link>
+                                <Link to={'/reward'} className="font-bold text-[18px]">Grown Reward</Link>
+                            </li>
                     <div className="relative flex items-center gap-2">
                         <div className="relative">
                             <input
