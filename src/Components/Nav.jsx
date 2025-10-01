@@ -4,6 +4,7 @@ import { FaUserCircle, FaHome, FaSearch, FaRegUserCircle } from "react-icons/fa"
 import { RiSearchEyeLine } from "react-icons/ri";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
+import { FaChevronDown } from "react-icons/fa6";
 import Register from './Register';
 import Login from './Login';
 
@@ -11,6 +12,7 @@ export default function Nav() {
     const [open, setOpen] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
+    const [showLang, setShowLang] = useState(false);
 
     return (
         <>
@@ -31,7 +33,7 @@ export default function Nav() {
                                         R
                                     </sup>
                                 </Link>
-                                <Link to={'/reward'} className="font-bold text-[18px]">Grown Reward</Link>
+                                <Link to={'/reward'} className="font-bold text-[18px]">Reward</Link>
                             </li>
                         </ul>
                     </div>
@@ -45,15 +47,28 @@ export default function Nav() {
                     </div>
                     {/* right */}
                     <div className='w-[40%] flex justify-end gap-5 items-center'>
-                        <button className='flex'>
-                            <span id="current-lang-text" className='text-[20px]'>ខ្មែរ</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                fill="none" stroke="currentColor" strokeWidth="2"
-                                strokeLinecap="round" strokeLinejoin="round"
-                                className="feather-chevron-down">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
+                        <button
+                            className="flex gap-1 items-center relative"
+                            onClick={() => setShowLang(!showLang)}
+                        >
+                            <span id="current-lang-text" className="text-[20px]">ខ្មែរ</span>
+                            <FaChevronDown
+                                className={`text-[20px] transition-transform duration-300 ${showLang ? "rotate-180" : "rotate-0"
+                                    }`}
+                            />
+
+                            {/* Dropdown with smooth animation */}
+                            <div
+                                className={`absolute top-[35px] w-[60px] flex flex-col px-3 border border-gray-300 bg-orange-100 rounded-[8px] overflow-hidden transition-all duration-300 ease-in-out ${showLang
+                                    ? "opacity-100 translate-y-0 max-h-[200px]"
+                                    : "opacity-0 -translate-y-2 max-h-0 pointer-events-none"
+                                    }`}
+                            >
+                                <img src="/img/camboflag.png" alt="Khmer" className="cursor-pointer" />
+                                <img src="/img/englishflag.png" alt="English" className="cursor-pointer" />
+                            </div>
                         </button>
+
                         <FaUserCircle
                             className='text-[30px] cursor-pointer'
                             onClick={() => setShowLogin(true)}
@@ -84,17 +99,31 @@ export default function Nav() {
 
             {/* Mobile Navbar */}
             <div className='w-full h-[60px] flex justify-between items-center fixed top-0 left-0 z-50 text-black/75 bg-orange-200 lg:hidden '>
-                <div className='w-[40%] ml-3'>
-                    <button className='flex'>
-                        <span id="current-lang-text" className='text-[20px]'>ខ្មែរ</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                            fill="none" stroke="currentColor" strokeWidth="2"
-                            strokeLinecap="round" strokeLinejoin="round"
-                            className="feather-chevron-down">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
+                <div className="w-[40%] ml-3 relative ">
+                    <button
+                        className="flex gap-1 items-center relative"
+                        onClick={() => setShowLang(!showLang)}
+                    >
+                        <span id="current-lang-text" className="text-[20px]">ខ្មែរ</span>
+                        <FaChevronDown
+                            className={`text-[20px] transition-transform duration-300 ${showLang ? "rotate-180" : "rotate-0"
+                                }`}
+                        />
+                        {/* Dropdown with smooth animation */}
+                        <div
+                            className={`absolute top-[35px] left-0 w-[60px] flex flex-col px-3 border border-gray-300 bg-orange-100 rounded-[8px] overflow-hidden transition-all duration-300 ease-in-out ${showLang
+                                ? "opacity-100 translate-y-0 max-h-[200px]"
+                                : "opacity-0 -translate-y-2 max-h-0 pointer-events-none"
+                                }`}
+                        >
+                            <img src="/img/camboflag.png" alt="Khmer" className="cursor-pointer" />
+                            <img src="/img/englishflag.png" alt="English" className="cursor-pointer" />
+                        </div>
                     </button>
+
+
                 </div>
+
                 <div className='w-[20%] mt-5'>
                     <div className='m-auto w-[60px] h-full'>
                         <Link to={'/'}>
@@ -115,7 +144,7 @@ export default function Nav() {
 
             {/* Mobile dropdown menu */}
             <div
-                className={`absolute top-[60px] left-0 w-full bg-orange-200 z-40 
+                className={` top-[60px] fixed left-0 w-full bg-orange-200 z-40 
                 transition-all duration-[0.8s] ease-in-out overflow-hidden
                 ${open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
             >
@@ -125,14 +154,14 @@ export default function Nav() {
                     <li><Link to={'/menu'}>Menu</Link></li>
                     <li><Link to={'/offer'}>Offer</Link></li>
                     <li className="flex items-center gap-1">
-                                <Link to={'/reward'} className="font-bold text-[18px]">BK</Link>
-                                <Link to={'/reward'} className="font-bold text-[18px]">
-                                    <sup className="w-[14px] h-[14px] flex items-center justify-center rounded-full border-[2px] border-black/75 text-[10px] font-bold">
-                                        R
-                                    </sup>
-                                </Link>
-                                <Link to={'/reward'} className="font-bold text-[18px]">Grown Reward</Link>
-                            </li>
+                        <Link to={'/reward'} className="font-bold text-[18px]">BK</Link>
+                        <Link to={'/reward'} className="font-bold text-[18px]">
+                            <sup className="w-[14px] h-[14px] flex items-center justify-center rounded-full border-[2px] border-black/75 text-[10px] font-bold">
+                                R
+                            </sup>
+                        </Link>
+                        <Link to={'/reward'} className="font-bold text-[18px]">Reward</Link>
+                    </li>
                     <div className="relative flex items-center gap-2">
                         <div className="relative">
                             <input

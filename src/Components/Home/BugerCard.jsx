@@ -12,12 +12,11 @@ export default function BugerCard({ name, price, img }) {
             </div>
 
             {/* Bottom Section */}
-            <div className="relative rounded-tr-[40px] overflow-hidden bg-orange-400">
-
+            <div className="relative rounded-tr-[40px] overflow-hidden bg-orange-400 group">
                 {/* Background fill full area */}
                 <div className="absolute inset-0 bg-red-600 
-                  translate-y-full group-hover:translate-y-0
-                  transition-transform duration-500 ease-in-out z-0"></div>
+    translate-y-full group-hover:translate-y-0
+    transition-transform duration-500 ease-in-out z-0"></div>
 
                 {/* Content */}
                 <div className="relative z-10 flex flex-col items-center justify-center py-6 px-4 ">
@@ -29,11 +28,12 @@ export default function BugerCard({ name, price, img }) {
                     </p>
 
                     <button className="mt-5 bg-red-600 text-white font-semibold py-2 px-6 rounded-full 
-                       transition-colors duration-500 hover:bg-white hover:text-red-600">
+      transition-colors duration-500 group-hover:bg-white group-hover:text-red-600">
                         ORDER NOW
                     </button>
                 </div>
             </div>
+
 
         </div>
     );
