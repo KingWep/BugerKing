@@ -8,8 +8,7 @@ export default function BugerCard({ name, price, img }) {
         AOS.init({ duration: 1000 });
     }, []);
     return (
-        <div className=" bg-orange-100 rounded-tr-[50px] rounded-bl-[50px] rounded-br-[5px] rounded-tl-[5px] shadow-lg overflow-hidden relative group " data-aos="fade-up"
-            data-aos-duration="3000">
+        <div className=" bg-orange-100 rounded-tr-[50px] rounded-bl-[50px] rounded-br-[5px] rounded-tl-[5px] shadow-lg overflow-hidden relative group" data-aos="zoom-in-up">
 
             {/* Burger Image */}
             <div className=" m-auto w-[90%] lg:h-[250px] md:h-[200px] h-[250px] flex justify-center items-end relative z-20">

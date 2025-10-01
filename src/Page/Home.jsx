@@ -15,7 +15,7 @@ export default function Home() {
       <div className='w-full pt-[60px] pb-10'>
         <Banner />
         <div className='w-full flex justify-center pt-5 pb-10'>
-          <h1 className='font-bold text-[40px] text-red-950' data-aos="fade-down">Favorite</h1>
+          <h1 className='font-bold text-[40px] text-red-950' data-aos="zoom-in-up">Favorite</h1>
         </div>
         <div className=''>
           <BurgerMenu />

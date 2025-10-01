@@ -1,7 +1,13 @@
+import { React, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function ReawardCard({img, title, description}) {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
     return (
         <>
-            <div className="bg-white rounded-lg overflow-hidden">
+            <div className="bg-orange-50 shadow-md rounded-lg overflow-hidden" data-aos="zoom-in-up">
                 <div>
                     <img src={img} alt="" className="w-full object-cover" />
                 </div>

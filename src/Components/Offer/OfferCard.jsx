@@ -1,9 +1,13 @@
-import React from 'react'
-
+import { React, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function OfferCard({img, name, describe}) {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <>
-        <div className='bg-white rounded-lg'>
+        <div className='bg-orange-50 rounded-lg shadow-md' data-aos="zoom-in-up">
             <div className=''>
                 <img src={img} alt={name} className=' object-fit-cover'/>
             </div>
